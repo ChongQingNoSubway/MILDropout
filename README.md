@@ -1,6 +1,3 @@
-# MILDropout
-Code for paper: How Effective Can Dropout Be in Multiple Instance Learning ?
-
 # How Effective Can Dropout Be in Multiple Instance Learning? (ICML 2025) [![paper](https://img.shields.io/badge/arXiv-Paper-brightgreen)](https://arxiv.org/abs/2504.14783)
 
 Paper link (preprint): [https://arxiv.org/abs/2504.14783]
