@@ -97,15 +97,47 @@ class mildropout(nn.Module):
         return mask
 
 ```
+## Applying Mildropout in MIL Models
+
+When working with MIL (Multiple Instance Learning) models, it's common practice to apply **Mildropout** in the **shallow MLP layers**, particularly **after the ReLU activation function and before the data enters the MIL module**.
+
+You can refer to the implementation in the following Python files for more details:
+- `abmil.py`
+- `dsmil.py`
+- `transmil_mildropout.py`
+
+### Example Usage
+
+Here’s a simple example of how to apply Mildropout correctly:
+
+```python
+class TransMIL(nn.Module):
+    def __init__(self, input_size, n_classes, mDim=512):
+        super(TransMIL, self).__init__()
+        self.pos_layer = PPEG(dim=mDim)
+        self._fc1 = nn.Sequential(nn.Linear(input_size, mDim), nn.ReLU(), nn.Dropout(0.2))
+        # the fc1 as the middle layer
+        self._fc1 = nn.Sequential(
+          nn.Linear(input_size, 256),
+          nn.ReLU(),
+          # append the mildropout after Relu activation function
+          mildropout(topk=topk,kernel=kernel),
+          nn.Linear(256, 128),
+          nn.ReLU(),
+          mildropout(topk=topk,kernel=kernel),
+          nn.Linear(128, mDim),
+          nn.ReLU(),
+          mildropout(topk=topk,kernel=kernel),
+        )
+        self.cls_token = nn.Parameter(torch.randn(1, 1, mDim))
+        self.n_classes = n_classes
+        self.layer1 = TransLayer(dim=mDim)
+        self.layer2 = TransLayer(dim=mDim)
+        self.norm = nn.LayerNorm(mDim)
+        self._fc2 = nn.Linear(mDim, self.n_classes)
+```
 
 
-## integrating into Existing methods
-
-
-
-
-
-
-## Wsi Pre-computed features and training/testing splits:
-- SwinUnet: https://github.com/HuCaoFighting/Swin-Unet
+## Wsi Pre-computed features and training/testing splits From DGR-MIL:
+- DGR-MIL: https://github.com/ChongQingNoSubway/DGR-MIL
 
