@@ -2,6 +2,20 @@
 
 Paper link (preprint): [https://arxiv.org/abs/2504.14783]
 
+
+## Citation
+If you find our work is useful in your research, please consider raising a star  :star:  and citing:
+
+```
+@article{zhu2025effective,
+  title={How Effective Can Dropout Be in Multiple Instance Learning?},
+  author={Zhu, Wenhui and Qiu, Peijie and Chen, Xiwen and Yang, Zhangsihao and Sotiras, Aristeidis and Razi, Abolfazl and Wang, Yalin},
+  journal={arXiv preprint arXiv:2504.14783},
+  year={2025}
+}
+```
+
+
 ## News :fire:
 - **May 07, 2025:** Congratulations ! Paper has been accepted by ICML 2025 !
 
