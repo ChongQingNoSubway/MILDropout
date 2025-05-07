@@ -5,7 +5,7 @@ Paper link (preprint): [https://arxiv.org/abs/2504.14783]
 ## News :fire:
 - **May 07, 2025:** Congratulations ! Paper has been accepted by ICML 2025 !
 
-<img align="right" width="100%" height="100%" src="https://github.com/ChongQingNoSubway/SelfReg-UNet/blob/main/MICCAI2024/findings.jpg">
+<img align="right" width="100%" height="100%" src="https://github.com/ChongQingNoSubway/MILDropout/blob/main/images/graphic_abstract.png">
 
 > **Abstract.**  Multiple Instance Learning (MIL) is a popular weakly-supervised method for various applications, with a particular interest in histological whole slide image (WSI) classification. Due to the gigapixel resolution of WSI, applications of MIL in WSI typically necessitate a two-stage training scheme: first, extract features from the pre-trained backbone and then perform MIL aggregation. However, it is well-known that this suboptimal training scheme suffers from "noisy" feature embeddings from the backbone and inherent weak supervision, hindering MIL from learning rich and generalizable features. However, the most commonly used technique (i.e., dropout) for mitigating this issue has yet to be explored in MIL. In this paper, we empirically explore how effective the dropout can be in MIL. Interestingly, we observe that dropping the top-k most important instances within a bag leads to better performance and generalization even under noise attack. Based on this key observation, we propose a novel MIL-specific dropout method, termed MIL-Dropout, which systematically determines which instances to drop. Experiments on five MIL benchmark datasets and two WSI datasets demonstrate that MIL-Dropout boosts the performance of current MIL methods with a negligible computational cost.
 
