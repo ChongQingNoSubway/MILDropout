@@ -126,7 +126,7 @@ Here’s a simple example of how to apply Mildropout correctly:
 
 ```python
 class TransMIL(nn.Module):
-    def __init__(self, input_size, n_classes, mDim=512,topk,kernel):
+    def __init__(self, input_size, n_classes, mDim=512,topk=3,kernel=7):
         super(TransMIL, self).__init__()
         self.pos_layer = PPEG(dim=mDim)
         self._fc1 = nn.Sequential(nn.Linear(input_size, mDim), nn.ReLU(), nn.Dropout(0.2))
