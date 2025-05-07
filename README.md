@@ -11,7 +11,7 @@ Paper link (preprint): [https://arxiv.org/abs/2504.14783]
 
 
 ## Key Code
-```
+```python
 
 import torch
 import torch.nn as nn
