@@ -113,7 +113,7 @@ class mildropout(nn.Module):
 ```
 ## Applying Mildropout in MIL Models
 
-When working with MIL (Multiple Instance Learning) models, it's common practice to apply **Mildropout** in the **shallow MLP layers**, particularly **after the ReLU activation function and before the data enters the MIL module**.
+When working with MIL models, it's common practice to apply **Mildropout** in the **shallow MLP layers**, particularly **after the ReLU activation function and before the features enter the MIL module**.
 
 You can refer to the implementation in the following Python files for more details:
 - `abmil.py`
